@@ -20,12 +20,13 @@ import { AppRegistry, Image } from 'react-native';
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
-    android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu |||||||||_____________UUUUUUUUUUUUPPP',
+    // android: 'Double tap R on your keyboard to reload,\n' +
+    // 'Shake or press menu button for dev menu',
+    android: '',
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component <Props> {
     render() {
         // console.error();
         // console.warn();
@@ -42,9 +43,10 @@ export default class App extends Component<Props> {
                   {instructions}
               </Text>
 
-              <Bananas/>
+                <Bananas/>
+                <Bananas2/>
 
-                {/*<Blink/>*/}
+
 
               <Blink text='I love to blink' />
               <Blink text='Yes blinking is so great' />
@@ -62,18 +64,38 @@ export default class App extends Component<Props> {
 
         );
 
-
     }
 
 }
 
+
+class Bananas2 extends Component {
+    render() {
+        let pic = {
+            // uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+            uri:'https://en.wikipedia.org/wiki/File:Mars_Ice_Home_concept.jpg'
+        };
+        return (
+            <Image source={pic} style={{width: 193, height: 110}}/>
+        );
+    }
+}
+
 class Bananas extends Component {
+
+
     render() {
         let pic = {
             uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
         };
+
+        // let pic2={
+        //     uri:'https://en.wikipedia.org/wiki/File:Mars_Ice_Home_concept.jpg'
+        // };
+
+        // console.log(pic);
         return (
-            <Image source={pic} style={{width: 193, height: 110}}/>
+            <Image source={pic} style={{width: 123, height: 80}}/>
         );
     }
 }
